@@ -31,10 +31,10 @@ public class VisorTeclado extends javax.swing.JFrame {
 
         jBTGoperacoes = new javax.swing.ButtonGroup();
         jPanelOperacoes = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        jRBTadicao = new javax.swing.JRadioButton();
+        jRBTsubtracao = new javax.swing.JRadioButton();
+        jRBTmultiplicacao = new javax.swing.JRadioButton();
+        jRBTdivisao = new javax.swing.JRadioButton();
         jPanelVisorResultado = new javax.swing.JPanel();
         jTFresultado = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -49,17 +49,21 @@ public class VisorTeclado extends javax.swing.JFrame {
         jPanelOperacoes.setBackground(new java.awt.Color(204, 204, 204));
         jPanelOperacoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Operações", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
-        jBTGoperacoes.add(jRadioButton1);
-        jRadioButton1.setText("Adição");
+        jRBTadicao.setBackground(new java.awt.Color(204, 204, 204));
+        jBTGoperacoes.add(jRBTadicao);
+        jRBTadicao.setText("Adição");
 
-        jBTGoperacoes.add(jRadioButton2);
-        jRadioButton2.setText("Subtração");
+        jRBTsubtracao.setBackground(new java.awt.Color(204, 204, 204));
+        jBTGoperacoes.add(jRBTsubtracao);
+        jRBTsubtracao.setText("Subtração");
 
-        jBTGoperacoes.add(jRadioButton3);
-        jRadioButton3.setText("Multiplicação");
+        jRBTmultiplicacao.setBackground(new java.awt.Color(204, 204, 204));
+        jBTGoperacoes.add(jRBTmultiplicacao);
+        jRBTmultiplicacao.setText("Multiplicação");
 
-        jBTGoperacoes.add(jRadioButton4);
-        jRadioButton4.setText("Divisão");
+        jRBTdivisao.setBackground(new java.awt.Color(204, 204, 204));
+        jBTGoperacoes.add(jRBTdivisao);
+        jRBTdivisao.setText("Divisão");
 
         javax.swing.GroupLayout jPanelOperacoesLayout = new javax.swing.GroupLayout(jPanelOperacoes);
         jPanelOperacoes.setLayout(jPanelOperacoesLayout);
@@ -67,13 +71,13 @@ public class VisorTeclado extends javax.swing.JFrame {
             jPanelOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelOperacoesLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jRadioButton1)
+                .addComponent(jRBTadicao)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton2)
+                .addComponent(jRBTsubtracao)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton3)
+                .addComponent(jRBTmultiplicacao)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton4)
+                .addComponent(jRBTdivisao)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanelOperacoesLayout.setVerticalGroup(
@@ -81,16 +85,18 @@ public class VisorTeclado extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelOperacoesLayout.createSequentialGroup()
                 .addContainerGap(8, Short.MAX_VALUE)
                 .addGroup(jPanelOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(jRBTadicao)
+                    .addComponent(jRBTsubtracao)
+                    .addComponent(jRBTmultiplicacao)
+                    .addComponent(jRBTdivisao))
                 .addContainerGap())
         );
 
         jTFresultado.setEditable(false);
         jTFresultado.setBackground(new java.awt.Color(255, 255, 255));
-        jTFresultado.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jTFresultado.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jTFresultado.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTFresultado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFresultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFresultadoActionPerformed(evt);
@@ -114,10 +120,13 @@ public class VisorTeclado extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("operandos"));
+
         jLabel1.setText("Numero 'a'");
 
         jLabel2.setText("Numero 'b'");
 
+        jTFnumeroA.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTFnumeroA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFnumeroAActionPerformed(evt);
@@ -133,9 +142,9 @@ public class VisorTeclado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jTFnumeroB, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                    .addComponent(jTFnumeroA))
-                .addContainerGap(82, Short.MAX_VALUE))
+                    .addComponent(jTFnumeroA, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                    .addComponent(jTFnumeroB))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,6 +159,7 @@ public class VisorTeclado extends javax.swing.JFrame {
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
+        jButton1.setBackground(new java.awt.Color(0, 153, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("RESULTADO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -169,8 +179,8 @@ public class VisorTeclado extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanelOperacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -181,14 +191,15 @@ public class VisorTeclado extends javax.swing.JFrame {
                 .addComponent(jPanelVisorResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jPanelOperacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFresultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFresultadoActionPerformed
@@ -200,9 +211,20 @@ public class VisorTeclado extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFnumeroAActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Double n1, n2, resultado;
+        Double n1, n2, resultado = 0.0;
         n1 = Double.parseDouble(jTFnumeroA.getText());
         n2 = Double.parseDouble(jTFnumeroB.getText());
+        
+        if(jRBTadicao.getModel().isSelected()){
+            resultado = n1 + n2;
+        }else if(jRBTsubtracao.getModel().isSelected()){
+            resultado = n1 - n2;
+        }else if(jRBTmultiplicacao.getModel().isSelected()){
+            resultado = n1 * n2;
+        }else if(jRBTdivisao.getModel().isSelected()){
+            resultado = n1 / n2;
+        }
+        jTFresultado.setText(resultado.toString());
         
         
         
@@ -251,10 +273,10 @@ public class VisorTeclado extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelOperacoes;
     private javax.swing.JPanel jPanelVisorResultado;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRBTadicao;
+    private javax.swing.JRadioButton jRBTdivisao;
+    private javax.swing.JRadioButton jRBTmultiplicacao;
+    private javax.swing.JRadioButton jRBTsubtracao;
     private javax.swing.JTextField jTFnumeroA;
     private javax.swing.JTextField jTFnumeroB;
     private javax.swing.JTextField jTFresultado;
